@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ "$DEVEL0PWD" != "" ] && [ ! -e /root/.rdp-entrypoint-executed ]; then
-	echo "Setting devel0 passwd"
-	echo "devel0:$DEVEL0PWD" | chpasswd
+if [ "$ROOTPWD" != "" ] && [ ! -e /root/.rdp-entrypoint-executed ]; then
+	echo "Setting root passwd"
+	echo "root:$ROOTPWD" | chpasswd
 	touch /root/.rdp-entrypoint-executed
 fi
 
