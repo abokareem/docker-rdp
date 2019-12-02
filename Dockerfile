@@ -18,10 +18,10 @@ RUN apt-get install -y gnome-keyring
 RUN apt-get install -y xfce4 xfce4-terminal
 
 # user sudo and xinitrc config
-RUN useradd -m -G sudo -s /bin/bash devel0
-COPY .Xresources /home/devel0
-COPY .xinitrc /home/devel0
-RUN chown -R devel0.devel0 /home/devel0
+RUN useradd -m -G sudo -s /bin/bash
+COPY .Xresources /root
+COPY .xinitrc /root
+RUN chown -R root.root /home/
 
 # disable xrdp log
 RUN sed -i 's/EnableSyslog=true/EnableSyslog=false/g' /etc/xrdp/xrdp.ini && \
